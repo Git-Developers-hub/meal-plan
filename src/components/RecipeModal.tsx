@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { X, Plus, Coffee, Sun } from "lucide-react"; // import lucide icons
 import {
   useMealPlan,
   type MealKeys,
@@ -58,11 +59,12 @@ const RecipeModal = ({ recipe: initialRecipe, recipeId, onClose }: Props) => {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-white w-full max-w-2xl rounded-2xl shadow-xl overflow-y-auto max-h-[90vh] relative animate-fadeIn">
+        {/* Close button with Lucide X icon */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 cursor-pointer text-gray-600 hover:text-black text-xl font-bold"
+          className="absolute top-4 right-4 text-gray-600 hover:text-black"
         >
-          ✖
+          <X size={24} />
         </button>
 
         {loading ? (
@@ -82,13 +84,13 @@ const RecipeModal = ({ recipe: initialRecipe, recipeId, onClose }: Props) => {
             {(recipe.strCategory || recipe.strArea) && (
               <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
                 {recipe.strCategory && (
-                  <span className="bg-gray-100 px-3 py-1 rounded-full">
-                    🍴 {recipe.strCategory}
+                  <span className="bg-gray-100 px-3 py-1 rounded-full flex items-center gap-1">
+                    <Coffee size={14} /> {recipe.strCategory}
                   </span>
                 )}
                 {recipe.strArea && (
-                  <span className="bg-gray-100 px-3 py-1 rounded-full">
-                    🌍 {recipe.strArea}
+                  <span className="bg-gray-100 px-3 py-1 rounded-full flex items-center gap-1">
+                    <Sun size={14} /> {recipe.strArea}
                   </span>
                 )}
               </div>
@@ -153,9 +155,9 @@ const RecipeModal = ({ recipe: initialRecipe, recipeId, onClose }: Props) => {
                   addToMealPlan(selectedDay, selectedMeal, recipe);
                   onClose();
                 }}
-                className="bg-green-600 text-white px-6 py-3 cursor-pointer rounded-full hover:bg-green-700 transition shadow-md"
+                className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 cursor-pointer rounded-full hover:bg-blue-700 transition shadow-md"
               >
-                ➕ Add to{" "}
+                <Plus size={18} /> Add to{" "}
                 {selectedDay.charAt(0).toUpperCase() + selectedDay.slice(1)} (
                 {selectedMeal})
               </button>

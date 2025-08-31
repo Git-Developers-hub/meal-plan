@@ -1,40 +1,78 @@
-── assets/            # Static assets (images, icons, logos, etc.)
-   ── logo.png
+# MealPlanner 🍽️
 
-── components/        # Reusable UI components
-  ── common           # common folder for error and loader reusable components
-    ── Error.tsx      # Show Error message display when api failed
-    ── Loader.tsx     # Show Loading spinner when data is pending
-  ── DayCard.tsx      # Card component for daily meal plan
-  ── MealPlanner.tsx  # weekly meal plan layout
-  ── Navbar.tsx       # Navigation bar for navigation
-  ── RecipeCard.tsx   # For display recipe
-  ── RecipeModal.tsx  # Modal for recipe details
-  ── SearchBar.tsx    # Search input for recipes
+MealPlanner is a modern web application to **discover, save, and plan weekly meals**. Users can search for recipes, view details, and organize their weekly meal plan. Built with **React**, **TypeScript**, and **TailwindCSS**.
+
+---
+
+---
+
+## Features
+
+- Search recipes using keywords.
+- View recipe **details**, ingredients, and instructions.
+- Add recipes to a **weekly meal planner**.
+- Remove or **replace meals** in the planner.
+- Responsive UI with **TailwindCSS** and subtle animations.
+- Modern homepage with **welcome screen and tips**.
+- Navigation with **Navbar** component.
+
+---
+
+## Libraries Used
+
+- **React** - Frontend library.
+- **TypeScript** - Type safety.
+- **React Router** - Page navigation.
+- **TailwindCSS** - Styling.
+- **Lucide-react** - Modern icons.
+- **React Context** - Global state for meal plan.
+- **Fetch API** - To get recipe data.
+
+---
+
+## API Used
+
+- **TheMealDB API**  
+  Base URL: `https://www.themealdb.com/api/json/v1/1`
 
 
-── context/           # global state for adding/removing meals
-  ── MealPlanContext.tsx
+## Folder Structure
 
-── hooks/             # custom hook for API fetch
-  ── useFetchRecipe.ts
+Recipe-Finder/
+│
+├── public/
+│ └── index.html
+│
+├── src/
+│ ├── assets/ # Images, logos, icons
+│ ├── components/ # Reusable UI components
+│ │ ├── common/ # Loader, ErrorMessage, etc.
+│ │ ├── Navbar.tsx
+│ │ ├── RecipeCard.tsx
+│ │ ├── RecipeModal.tsx
+│ │ ├── DayCard.tsx
+│ │ ├── SearchBar.tsx
+│ │ └── MealPlanner.tsx
+│ │
+│ ├── context/ # React context for global state
+│ │ └── MealPlanContext.tsx
+│ │
+│ ├── hooks/ # Custom hooks
+│ │ └── useFetchRecipe.ts
+│ │
+│ ├── pages/ # Page components (if needed)
+│ │ └── Home.tsx
+│ │
+│ ├── App.tsx # Main app component
+│ ├── main.tsx # Entry point
+│ └── index.css # Tailwind base styles
+│
+├── package.json
+├── tsconfig.json
+└── README.md
 
-── pages/             # Route-level components
-  ── Home.tsx         # Home page to showing recipe data
+![Homepage Preview](public/images/2.png)
+![Meal Planner Preview](public/images/3.png)
+![Recipe Modal Preview](public/images/4.png)
 
-── App.tsx            # Root component
-── index.css          # Global styles
-── main.tsx           # App entry point
-── vite-env.d.ts      # Vite TypeScript declarations
-
-── .env               # Environment variables 
-── .gitignore         # Ignored files for git
-── eslint.config.js   # ESLint configuration
-── index.html         # Main HTML template
-── package-lock.json  # Dependency lock file
-── package.json       # Project dependencies
-
-
-1. Tailwindcss good for responsive design
-2. lucide-react for icons
-3. global state, avoids prop drilling
+[🌐 Live Demo](https://meal-planner-weekly.netlify.app/)
