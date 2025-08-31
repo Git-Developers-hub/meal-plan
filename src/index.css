@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* Agar scrollbar styling karna ho */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6; /* blue-500 */
+  border-radius: 4px;
+}

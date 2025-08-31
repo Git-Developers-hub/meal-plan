@@ -37,4 +37,8 @@
 
 1. Tailwindcss good for responsive design
 2. lucide-react for icons
+<<<<<<< HEAD
 3. global state, avoids prop drilling
+=======
+3. global state, avoids prop drilling
+>>>>>>> 8accd3b (Initial commit)
